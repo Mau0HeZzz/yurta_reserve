@@ -1,0 +1,7 @@
+query GetOverhaulWorkTypes {
+  getOverhaulWorkTypes {
+    id
+    title
+    isBasic
+  }
+}

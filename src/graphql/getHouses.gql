@@ -1,0 +1,29 @@
+query getHouses(
+            $pageNumber: Int = 1,
+            $itemsOnPage: Int = 20,
+            $addrObjId: Int,
+            $organizationGuid: String,
+            $fullInfo: Boolean = false
+          ) {
+  getHouses(pageNumber: $pageNumber, itemsOnPage: $itemsOnPage, addrObjId: $addrObjId, organizationGuid: $organizationGuid) {
+    pageInfo {
+      totalPages
+      totalItems
+    }
+    houses {
+      gar
+      shortAddress
+      ...fullInfo @include(if: $fullInfo)
+    }
+  }
+}
+
+fragment fullInfo on GisHouse {
+  gisHouseType {
+    houseTypeName
+  }
+  gisHouseCondition {
+    houseCondition
+  }
+  energyEfficiency
+}

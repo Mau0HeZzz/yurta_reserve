@@ -1,0 +1,8 @@
+query getAddrObj {
+  getAddrObj {
+    nextAddrObjs {
+      objectId
+      fullName
+    }
+  }
+}

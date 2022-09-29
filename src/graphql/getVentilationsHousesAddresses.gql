@@ -1,0 +1,5 @@
+query GetVentilationsHousesAddresses($houseMunicipality: String) {
+  getVentilationsHousesAddresses(house_municipality: $houseMunicipality) {
+    title
+  }
+}

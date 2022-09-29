@@ -1,0 +1,28 @@
+query getGisHouse($gar: Int!) {
+  getGisHouse(gar: $gar) {
+    fias
+    shortAddress
+    geo
+    floorCount
+    totalSquare
+    residentialSquare
+    residentialPremiseCount
+    nonResidentialPremiseCount
+    municipalityOrganization {
+      shortName
+    }
+    managementOrganization {
+      shortName
+    }
+    gisHouseCondition {
+      houseCondition
+    }
+    gisHouseType {
+      houseTypeName
+    }
+    energyEfficiency
+    resourceOrganizations {
+      shortName
+    }
+  }
+}

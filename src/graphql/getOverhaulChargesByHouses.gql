@@ -1,0 +1,20 @@
+query GetOverhaulChargesByHouses($periodStart: String!, $periodEnd: String!, $addrObjGar: Int!, $pageNumber: Int, $itemsOnPage: Int) {
+  getOverhaulChargesByHouses(periodStart: $periodStart, periodEnd: $periodEnd, addrObjGar: $addrObjGar, pageNumber: $pageNumber, itemsOnPage: $itemsOnPage) {
+    addrObjGar
+    periodStart
+    periodEnd
+    pageNumber
+    itemsOnPage
+    totalItems
+    totalPages
+    chargesByHouses {
+      gisHouse {
+        gar
+        shortAddress
+      }
+      charged
+      paid
+      percentage
+    }
+  }
+}

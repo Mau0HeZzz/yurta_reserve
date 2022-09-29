@@ -1,0 +1,46 @@
+{
+  "name": "teplo",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "apexcharts": "^3.35.5",
+    "axios": "^0.27.2",
+    "core-js": "^3.6.5",
+    "js-cookie": "^3.0.1",
+    "leaflet": "^1.8.0",
+    "perfect-scrollbar": "^1.5.5",
+    "v-mask": "^2.3.0",
+    "vue": "^2.6.11",
+    "vue-apexcharts": "^1.6.2",
+    "vue-apollo": "^3.0.0-beta.11",
+    "vue-axios": "^3.4.1",
+    "vue-custom-scrollbar": "^1.4.4",
+    "vue-meta": "^2.4.0",
+    "vue-moment": "^4.1.0",
+    "vue-router": "^3.2.0",
+    "vue-speedometer": "^2.0.0",
+    "vuebar": "0.0.20",
+    "vuetify": "^2.4.0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^6.2.2",
+    "graphql-tag": "^2.9.0",
+    "sass": "~1.32.0",
+    "sass-loader": "^10.0.0",
+    "vue-cli-plugin-apollo": "~0.22.2",
+    "vue-cli-plugin-vuetify": "^2.4.3",
+    "vue-template-compiler": "^2.6.11",
+    "vuetify-loader": "^1.7.0"
+  }
+}

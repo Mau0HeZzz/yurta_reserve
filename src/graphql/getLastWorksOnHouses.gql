@@ -1,0 +1,26 @@
+query GetLastWorksOnHouses($periodStart: String!, $periodEnd: String!, $addrObjGar: Int!, $pageNumber: Int, $itemsOnPage: Int) {
+  getLastWorksOnHouses(periodStart: $periodStart, periodEnd: $periodEnd, addrObjGar: $addrObjGar, pageNumber: $pageNumber, itemsOnPage: $itemsOnPage) {
+    addrObjGar
+    periodStart
+    periodEnd
+    pageNumber
+    itemsOnPage
+    totalItems
+    totalPages
+    lastWorksOnHouse {
+      gisHouse {
+        gar
+        shortAddress
+      }
+      roof
+      facade
+      water
+      warm
+      gas
+      electricity
+      basement
+      foundation
+      elevator
+    }
+  }
+}

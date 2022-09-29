@@ -1,0 +1,41 @@
+query getOrganization(
+                      $guid: String!,
+                      # $page: Int = 1,
+                      # $itemsOnPage: Int = 10000,
+                      $fullInfo: Boolean = false
+                    ) {
+  getOrganization(guid: $guid) {
+    guid
+    shortName
+    ...fullInfo @include(if: $fullInfo)
+  }
+}
+
+fragment fullInfo on Organization {
+  fullName
+  chiefLastName
+  chiefFirstName
+  chiefMiddleName
+  orgAddress
+  phone
+  orgEmail
+  url
+  inn
+  kpp
+  ogrn
+  postalAddress
+  factualAddress
+  authorityFactualAddress
+  stateRegistrationDate
+  # resourceHouses(page: $page, itemsOnPage: $itemsOnPage) {
+  #   gar
+  #   shortAddress
+  #   gisHouseCondition {
+  #     houseCondition
+  #   }
+  #   gisHouseType {
+  #     houseTypeName
+  #   }
+  #   energyEfficiency
+  # }
+}

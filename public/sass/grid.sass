@@ -1,0 +1,60 @@
+$sm: 576px
+$md: 768px
+$lg: 992px
+$xl: 1280px
+
+.custom-row
+  display: flex
+  flex-wrap: wrap
+  margin: -10px
+
+.custom-col-1,
+.custom-col-2,
+.custom-col-3,
+.custom-col-4,
+.custom-col-5
+  width: 100%
+  padding: 10px
+
+@media (min-width: $sm)
+  .custom-col-1
+    width: 50%
+
+  .custom-col-2
+    width: 100%
+
+@media (min-width: $md)
+  .custom-col-1
+    width: calc(100% / 3)
+
+  .custom-col-2
+    width: 50%
+
+  .custom-col-3
+    width: 100%
+
+@media (min-width: $lg)
+  .custom-col-1
+    width: 25%
+
+  .custom-col-2
+    width: 50%
+
+  .custom-col-3
+    width: 75%
+
+  .custom-col-4
+    width: 100%
+
+@media (min-width: $xl)
+  .custom-col-1
+    width: 20%
+
+  .custom-col-2
+    width: 40%
+
+  .custom-col-3
+    width: 60%
+
+  .custom-col-4
+    width: 80%

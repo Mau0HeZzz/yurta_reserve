@@ -1,0 +1,161 @@
+query getShutdowns($area: String, $dateStart: String, $dateEnd: String) {
+  getShutdowns(area: $area, dateStart: $dateStart, dateEnd: $dateEnd) {
+    info {
+      planned {
+        totalShutdowns
+        totalHouses
+        totalFlats
+        totalPeople
+      }
+      emergency {
+        totalShutdowns
+        totalHouses
+        totalFlats
+        totalPeople
+      }
+      excess {
+        totalShutdowns
+        totalHouses
+        totalFlats
+        totalPeople
+      }
+      coldWater {
+        planned {
+          totalShutdowns
+          totalFlats
+          totalPeople
+          totalHouses
+        }
+        emergency {
+          totalShutdowns
+          totalFlats
+          totalPeople
+          totalHouses
+        }
+        excess {
+          totalShutdowns
+          totalFlats
+          totalPeople
+          totalHouses
+        }
+      }
+      hotWater {
+        planned {
+          totalShutdowns
+          totalFlats
+          totalPeople
+          totalHouses
+        }
+        emergency {
+          totalShutdowns
+          totalFlats
+          totalPeople
+          totalHouses
+        }
+        excess {
+          totalShutdowns
+          totalFlats
+          totalPeople
+          totalHouses
+        }
+      }
+      electricity {
+        planned {
+          totalShutdowns
+          totalFlats
+          totalPeople
+          totalHouses
+        }
+        emergency {
+          totalShutdowns
+          totalFlats
+          totalPeople
+          totalHouses
+        }
+        excess {
+          totalShutdowns
+          totalFlats
+          totalPeople
+          totalHouses
+        }
+      }
+      warm {
+        planned {
+          totalShutdowns
+          totalFlats
+          totalPeople
+          totalHouses
+        }
+        emergency {
+          totalShutdowns
+          totalFlats
+          totalPeople
+          totalHouses
+        }
+        excess {
+          totalShutdowns
+          totalFlats
+          totalPeople
+          totalHouses
+        }
+      }
+      gas {
+        planned {
+          totalShutdowns
+          totalFlats
+          totalPeople
+          totalHouses
+        }
+        emergency {
+          totalShutdowns
+          totalFlats
+          totalPeople
+          totalHouses
+        }
+        excess {
+          totalShutdowns
+          totalFlats
+          totalPeople
+          totalHouses
+        }
+      }
+      elevator {
+        planned {
+          totalShutdowns
+          totalFlats
+          totalPeople
+          totalHouses
+        }
+        emergency {
+          totalShutdowns
+          totalFlats
+          totalPeople
+          totalHouses
+        }
+        excess {
+          totalShutdowns
+          totalFlats
+          totalPeople
+          totalHouses
+        }
+      }
+    }
+    shutdownsHouses {
+      guid
+      address
+      coord
+      shutdowns {
+        id
+        group
+        type
+        section
+        comment
+        performer
+        dateon
+        dateend
+        status
+        inTime
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+default:
+  image: node:16-alpine
+  tags:
+    - node
+
+build:
+  stage: build
+  only: 
+    - master
+  before_script:
+    - npm ci --cache .npm --prefer-offline
+  script: 
+    - npm run build
+  artifacts:
+    paths:
+      - dist/*
+  cache:
+    key: $CI_COMMIT_REF_SLUG
+    paths:
+      - .npm/
+
+publish:
+  stage: deploy
+  only: 
+    - master
+  before_script:
+    - 'command -v ssh-agent >/dev/null || ( apk update && apk add --no-cache openssh-client)'
+    - eval $(ssh-agent -s)
+    - echo "$YURTADOM_SSH_KEY" | tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh
+    - ssh-keyscan arm.yurtadom.ru >> ~/.ssh/known_hosts
+    - chmod 644 ~/.ssh/known_hosts
+    - apk add --no-cache rsync
+  script:
+    - rsync -avz --delete-after ./dist/* aleksei@arm.yurtadom.ru:/home/aleksei/web/arm.yurtadom.ru/public_html
+  environment:
+    name: production
+    url: https://arm.yurtadom.ru/

@@ -1,0 +1,119 @@
+query GetHousesEntranceRenovations($periodStart: String!, $periodEnd: String!, $addrObjGar: Int!, $pageNumber: Int, $itemsOnPage: Int) {
+  getHousesEntranceRenovations(periodStart: $periodStart, periodEnd: $periodEnd, addrObjGar: $addrObjGar, pageNumber: $pageNumber, itemsOnPage: $itemsOnPage) {
+    addrObjGar
+    periodStart
+    totalPages
+    totalItems
+    itemsOnPage
+    pageNumber
+    periodEnd
+    housesEntranceRenovations {
+      gisHouse {
+        gar
+        shortAddress
+        geo
+        floorCount
+        totalSquare
+        residentialSquare
+        deterioration
+        deteriorationDate
+        buildingYear
+        operationYear
+        residentialPremiseCount
+        nonResidentialPremiseCount
+        energyInspectionDate
+        municipalityOrganization {
+          guid
+          fullName
+          shortName
+          additionalData
+          chiefLastName
+          chiefFirstName
+          chiefMiddleName
+          orgAddress
+          phone
+          orgEmail
+          url
+          inn
+          kpp
+          ogrn
+          postalAddress
+          factualAddress
+          authorityFactualAddress
+          stateRegistrationDate
+          resourceTypes {
+            id
+            title
+          }
+        }
+        managementOrganization {
+          guid
+          fullName
+          shortName
+          additionalData
+          chiefLastName
+          chiefFirstName
+          chiefMiddleName
+          orgAddress
+          phone
+          orgEmail
+          url
+          inn
+          kpp
+          ogrn
+          postalAddress
+          factualAddress
+          authorityFactualAddress
+          stateRegistrationDate
+          resourceTypes {
+            id
+            title
+          }
+        }
+        gisHouseCondition {
+          code
+          houseCondition
+        }
+        lifeCycleStage {
+          guid
+          code
+          lifeCycleStage
+        }
+        gisHouseType {
+          guid
+          code
+          houseTypeName
+        }
+        energyEfficiency
+        resourceOrganizations {
+          guid
+          fullName
+          shortName
+          additionalData
+          chiefLastName
+          chiefFirstName
+          chiefMiddleName
+          orgAddress
+          phone
+          orgEmail
+          url
+          inn
+          kpp
+          ogrn
+          postalAddress
+          factualAddress
+          authorityFactualAddress
+          stateRegistrationDate
+          resourceTypes {
+            id
+            title
+          }
+        }
+      }
+      totalEntrances
+      totalRamps
+      cost
+      date
+    }
+  }
+}

@@ -1,0 +1,130 @@
+query GetOverhaulWorksDashboard($periodStart: String!, $periodEnd: String!, $addrObjGar: Int!) {
+  getOverhaulWorksDashboard(periodStart: $periodStart, periodEnd: $periodEnd, addrObjGar: $addrObjGar) {
+    addrObjGar
+    periodStart
+    periodEnd
+    totalWorks
+    totalHouses
+    totalCost
+    worksByTypes {
+      type {
+        id
+        title
+        isBasic
+      }
+      amount
+      cost
+    }
+    worksByYears {
+      year
+      amount
+      cost
+    }
+    worksByWorkCount {
+      workCount
+      amount
+      cost
+    }
+    worksOnInnerObjects {
+      addrObj {
+        objectId
+        name
+        typeName
+        fullName
+        level
+        gisHouses {
+          gar
+          fias
+          shortAddress
+          geo
+          floorCount
+          totalSquare
+          residentialSquare
+          deterioration
+          deteriorationDate
+          buildingYear
+          operationYear
+          residentialPremiseCount
+          nonResidentialPremiseCount
+          energyInspectionDate
+          managementOrganization {
+            guid
+            fullName
+            shortName
+            additionalData
+            chiefLastName
+            chiefFirstName
+            chiefMiddleName
+            orgAddress
+            phone
+            orgEmail
+            url
+            inn
+            kpp
+            ogrn
+            postalAddress
+            factualAddress
+            authorityFactualAddress
+            stateRegistrationDate
+            resourceTypes {
+              id
+              title
+            }
+          }
+          lifeCycleStage {
+            guid
+            code
+            lifeCycleStage
+          }
+          gisHouseType {
+            guid
+            code
+            houseTypeName
+          }
+          energyEfficiency
+          resourceOrganizations {
+            guid
+            fullName
+            shortName
+            additionalData
+            chiefLastName
+            chiefFirstName
+            chiefMiddleName
+            orgAddress
+            phone
+            orgEmail
+            url
+            inn
+            kpp
+            ogrn
+            postalAddress
+            factualAddress
+            authorityFactualAddress
+            stateRegistrationDate
+            resourceTypes {
+              id
+              title
+            }
+          }
+          gisParams {
+            id
+            level
+            paramCode
+            name
+            hasChildren
+            unit
+          }
+        }
+      }
+      worksByTypes {
+        type {
+          id
+          title
+          isBasic
+        }
+        amount
+        cost
+      }
+    }
+  }
+}

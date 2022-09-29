@@ -1,0 +1,30 @@
+query GetResourceOrganizations($addrObjId: Int, $pageNumber: Int = 1, $itemsOnPage: Int = 10000, $fullInfo: Boolean = false) {
+  getResourceOrganizations(addrObjId: $addrObjId, pageNumber: $pageNumber, itemsOnPage: $itemsOnPage) {
+    pageInfo {
+      totalPages
+    }
+    organizations {
+      guid
+      shortName
+      ...fullInfo @include(if: $fullInfo)
+    }
+  }
+}
+
+fragment fullInfo on Organization {
+  fullName
+  chiefLastName
+  chiefMiddleName
+  chiefFirstName
+  stateRegistrationDate
+  orgAddress
+  phone
+  inn
+  orgEmail
+  url
+  kpp
+  ogrn
+  postalAddress
+  factualAddress
+  authorityFactualAddress
+}

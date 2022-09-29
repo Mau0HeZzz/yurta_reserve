@@ -1,0 +1,39 @@
+query GetOverhaulDebtDashboard($addrObjGar: Int!) {
+  getOverhaulDebtDashboard(addrObjGar: $addrObjGar) {
+    addrObjGar
+    periodStart
+    periodEnd
+    totalDebt
+    totalClaimed
+    totalCollected
+    debtThreeYearsMore
+    debtOnYears {
+      year
+      totalDebt
+      debtOnPayerTypes {
+        payerType {
+          id
+          title
+        }
+        debt
+      }
+    }
+    debtOnPayerTypes {
+      payerType {
+        id
+        title
+      }
+      debt
+    }
+    debtSharesOnInnerObjects {
+      addrObj {
+        objectId
+        name
+        typeName
+        fullName
+      }
+      totalDebt
+      debtPercentage
+    }
+  }
+}

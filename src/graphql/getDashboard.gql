@@ -1,0 +1,46 @@
+query GetDashboard(
+    $addrObjId: Int
+    $houseGAR: Int
+    $default: Boolean = true
+    $heatConsumption: Boolean = false
+  ) {
+  getDashboard(addrObjId: $addrObjId, houseGAR: $houseGAR) {
+    ...default @include(if: $default)
+    ...heatConsumption @include(if: $heatConsumption)
+  }
+}
+
+fragment default on Dashboard {
+  energyEfficiencyInfo {
+    totalHouses
+    classA
+    classB
+    classC
+    classD
+    classE
+    classF
+    classG
+  }
+  shutdownsInfo {
+    plannedShutdowns
+    emergencyShutdowns
+    peopleWithoutHeating
+  }
+  heatSupplyOrganizationsInfo {
+    heatSupplyOrganizations
+    centralHeatingPoints
+    individualHeatingPoints
+  }
+}
+
+fragment heatConsumption on Dashboard {
+  heatConsumption {
+    totalFactualConsumption
+    totalPlannedConsumption
+    heatConsumptionData {
+      plannedConsumption
+      factualConsumption
+      date
+    }
+  }
+}

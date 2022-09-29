@@ -1,0 +1,33 @@
+query GetEnergyEfficiency($houseGar: Int) {
+  getEnergyEfficiency(houseGar: $houseGar) {
+    currentClass {
+      class
+      heatingPoints
+      electricityPoints
+      waterSupplyPoints
+      managmentQuality
+    }
+    expectedClass {
+      class
+      heatingPoints
+      electricityPoints
+      waterSupplyPoints
+      managmentQuality
+    }
+    events {
+      hasMultiChamberPlasticWindows
+      hasVentilationTimer
+      hasMotionSensor
+      hasLightSensor
+      isBasementPipesIsolated
+      hasCentralManagment
+      isAtticPipesIsolated
+      hasIndivThermalpoint
+      hasInductionCooker
+      hasOneChamberPlasticWindows
+      hasThermalCurtain
+      hasAutomaiticTC
+      hasControllableTC
+    }
+  }
+}

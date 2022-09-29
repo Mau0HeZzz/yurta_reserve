@@ -1,0 +1,25 @@
+query GetOverhaulDebtByHouses($addrObjGar: Int!, $pageNumber: Int, $itemsOnPage: Int) {
+  getOverhaulDebtByHouses(addrObjGar: $addrObjGar, pageNumber: $pageNumber, itemsOnPage: $itemsOnPage) {
+    addrObjGar
+    periodStart
+    periodEnd
+    pageNumber
+    itemsOnPage
+    totalItems
+    totalPages
+    debtByHouses {
+      gisHouse {
+        gar
+        shortAddress
+      }
+      totalDebt
+      debtOnPayerTypes {
+        payerType {
+          id
+          title
+        }
+        debt
+      }
+    }
+  }
+}

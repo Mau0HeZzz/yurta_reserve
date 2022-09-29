@@ -1,0 +1,151 @@
+.content
+  position: relative
+  flex-grow: 1
+  transition: background-color .2s
+  padding-top: 82px
+
+  
+@media (min-width: 1295px)
+  .v-navigation-drawer
+    top: 82px !important
+
+.v-navigation-drawer
+  position: fixed
+  bottom: 0
+  max-height: 100vh !important
+
+  .link
+    position: relative
+    overflow: unset
+    white-space: unset
+
+  .link--active
+    background-color: rgba(17, 131, 50, .1) !important
+    color: var(--v-linkActiveColor-base) !important
+
+    &:before
+      content: ""
+      display: block
+      position: absolute
+      width: 4px
+      height: 100%
+      background-color: #1EB94B
+      opacity: 1 !important
+
+
+.theme--dark .v-navigation-drawer
+  transition-property: transform, visibility, width, background-color
+
+.black-bg
+  background-color: $bg-dark
+  color: #fff
+
+.v-application a
+  color: $main-color !important
+
+.v-bottom-navigation
+  background-color: $bg-color !important
+
+.theme--dark .v-bottom-navigation
+  background-color: #272727 !important
+
+.v-navigation-drawer
+  &__content
+    //background: right -50px bottom 0 no-repeat url(/img/main/footer_short.png)
+    //background-size: 250px
+    .v-list
+      background: none !important
+      &-item
+        // &:hover
+        //   background-color: $main-light
+        // &__content
+        //   &:hover
+        //     background-color: $main-light
+        &--active
+          background-color: $main-light
+          &::before
+            content: ''
+            display: block
+            position: absolute
+            width: 4px
+            height: 100%
+            background-color: $main-color
+            opacity: 1
+            // transition: none !important
+          // &:hover::before
+          //   opacity: 1 !important
+
+.v-ripple__container
+  color: $main-color !important
+
+.v-tab
+  &:hover
+    background-color: $main-light !important
+
+.board
+  height: 100%
+  min-height: 350px
+  .v-card__title
+    word-break: inherit
+    font-size: 0.8vmax
+  &-row
+    margin: 0
+    padding: 12px 0
+
+ul
+  list-style: none
+
+.efficiency-list, .org-list
+  line-height: 28px
+  text-align: right
+
+.org-list
+  &__item
+    &-value
+      font-size: 3em
+      font-weight: bold
+    &-title
+      font-size: 1.5em
+
+.header
+  flex-grow: 0
+
+  &::after
+    content: ''
+    position: absolute
+    bottom: 0
+    right: 0
+    width: calc(100% - 256px)
+    height: 18px
+    background-color: var(--v-layoutBackground-base)
+
+.theme--light .header::after
+  background-image: url(/img/main/lenta.png)
+  background-repeat: repeat-x
+  background-position: right
+
+.auth
+  background: 50% no-repeat url(../public/img/main/auth-bg.jpg)
+  background-size: cover
+  min-height: 100vh
+  min-width: 100vw
+
+.fade-enter-active, .fade-leave-active
+  // transition-timing-function: cubic-bezier(0.8, 0.5, 0.8, 0.1)
+  transition: opacity .2s
+
+.fade-enter, .fade-leave-to
+  opacity: 0
+
+.pin
+  &_red
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAEiElEQVRogbWZS2xVVRSGv3XPKa0tVBPAyECCykS0hZGJs0awBkKa5rZ3aogSE4QJCiEigRoHPpCqCeIDRZIaJ6fc05RYRJ4DdGZikzYMfCGGKJIQBKm29569HLRIqe3Z+zzuP91r/Wv9d+279l77CDlBOzoWUFe3HtUngJXAMuCeqeVrwM+IDGPMaaLoCxkcvJFHXMlKoMXiEkR2o/o00OjoNgZ8jue9IUHwQ5b4qQVoqXQXUfQS8ALQlJKmgkgvY2N75Nix8TQEqQRoqbQcY8qotqTxnwXfUK0WZXDwclLHxAK0s3MVhcJx4N6kvhb8iuo6CcORJE6JBGiptJwo+pr8k7+Fi1SrjyWpRMHVUDdsaMCYgNolD7AU3w917dp6VwdnAVy/vhPVVanSSobHaWjocTV22kJaLC4Bvset24wg8jFwksbGCwCMjS0D1qC6EXjUgWMCY1bIwMCPNkPfgYypPm9LfgLYSmvrB9LTY2asjQKjWirtx5hNqO4D5sVwzcPzdgDPWVOzGWhHxwJ8/3fiD6kJVNdKGJ628QFod/dqjBkiXsRNPO8+CYK/4rjs/4G6uvXYT9itrskDSH//KWCbxawJY9bZuOwCJu82cRjB8z608syE5x1gcmvFxV5to3HpQistQQ5KEEQOPHdAgiBC9ROLWauNx0XAA7Grvn/SgWMunLCsP2gjcBHQbFm/6MAxO6LoF4vF3TYKFwEzW+KdGB9PfyWvVGy+8bFxE3AtdrW+/n4HjtnR0LA0U2zcBFyIXY2idgeO2SHylMXiJxuFXYDIdxaLjVoqeVaeGdBSyUP1GYvZsI3HpQK2LvMIxmxy4LkTxmxBZEWsjeopG41dQGPjl0zOsHGB9ml3t/XQ+c+8q2sNqnstZmPMn3/cxuV6Gz0A2H7lCWAbnndgroNN29p8Fi7cPJV8nYXvfSmXn7fl5iags/MhCoXzDkEBRqdO2BP4/mQDqFaXUSi0Y8yz1m0ziSqe97DLi4VzD9eurv2obna1zwSR9+TIkS0upu4TWaHwCvBn2pwS4AaVyquuxs4CJAiuAG+mSikZXq/JUA9Ac3MvWe4+dlyiUnkniUMiAXL48D+I7E6WU5IA8rIcPRrfsmcgWQUAWlr6EPk2sZ8dw7S09CV1Sve02N3dhjFn0vjOTartEoa2+eB/SF4BQPr7zwJDaXznwFCa5CGlAABUtwHV1P63EaG6I61zagEShucR+TSt/20iOZT0QXc60lcAwJhdQJYvLTdR3ZMlhUwCJAz/AHozULwl5fJvWXLIVgGApqa9QJokLlOt7ssaPrMA6etLuw125fGhL3sFAHz/EJDkj3ieq1cP5xE6FwESBBEi7q3QmBfl7Nk8WnD2z6zTocXiV8CTFrMzUi7b3ludkc8WugXV7cQ/RhmM2Z5nyFwFSBgOA5/NaaDaJwMDuV4E860AgOftZPZXjL/x/dyv4rkLkCC4BLw7y9LbEgS5D0P5VwCgWn0NmD4WXsHzajKO1kSADA7eQHX6YN4jQVCTB4HaVABg8eKPgHPAORYtOlirMP8CsXhwh6BieIUAAAAASUVORK5CYII=") center
+    background-size: cover
+  &_orange
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABmJLR0QA/wD/AP+gvaeTAAAE1klEQVRogbWZS2xUVRzGf/9zZ0qB1AcJMC0F2gHDwxcrE3cGECNhZcLWhRISIsSgPGJthmtBkKca0agISjBuSHRlI/KQBbozsQlNRTrT8mihdiGmdGg7c+9x0SFgKfec+5hve77v+/+/3tv/nHOukBAGty2qG6strRGR5Wj9LNAEPFZZvgX0gHRozbma0dSPM/ddGkqirsQ1GGyZX19KOzk0rwLTLGVFRL7zhL1z3Xx3nPqRA1zb3DjVqUu/A/IWMD2iTUng0O1/1I4nPukejWIQKcA1d8FCx9ffA09H0U+C35yyfmX27p6BsMLQAa67TcuUr04Bs8JqDbimlKzOuPmLYUShAlT+8r+SfPN3cdUp6+fCPAllS+xxm2odX5+kes0DzPNT/HB508IptgLrAFN8aQGWRWorBDTy/PQZvmvLt3qFBlvm15dSzmXsps1F4CvR6ozcGeoF0FPrmrT4K4F1wFMWHmOOr5bO3tWdNxFTFmZU5ryp+THRbM44hc/Fxf//0kAn0KnXcrh/cfMGETkI1AR41XhKbwfWm3ozPoHBbYvqSrWlmwT/SI0pJS9n3Pw5kx/A9Vx2hYJ2gkMMp9TUzCy383aQl/F/YKy2tAbDL6xoNts2D9DYVjirkS0G2nTPK642eRkDiMhyA+Vi5s/CFyafiWjoyn8GdAZxtGKFycc8hcY3ZgHrckRO4hl9JqCiORpcWj1j8rEZo82BjThyxsJj8uJKTgd6o7NGD4s6jwQtOky5auExubaYumKgPGrysAngBy1KsRx5R6umeSZtYG2wC3AraLE8zZtr4TEpSuh5cWqDRQCN9Aaue/4qk8dDtb7/koFSMHlYjFH9RzCBdXotjslnIvRaHI28FsgROkw+FmMU05R5sn9x8wajzwTcWJLdCCwN4ohw1uRjDKCKwz8BxeBCcvB6Lmv80bmLPje7EthvoBXV7eFTxv5MhMyBgWHguIFWo6C9L7dgU9DrpN0XUv257Jvi0w6kDZ7HK7UDYTUCB1oXLvCU32VRFMa3B0eVktOK2l4An5Em39OrEF7H8NpUUPaULLG5sbCe4X257GGBN2z5caDh0zlthY02XOsTmSqp94B/I3dlj6FUWe+0JVsHqN/TPYjW+6L1FAJaf1CVQz3AqKMPAZH3Phbowxn9KIwgVIBmt3dEkFy4nuwhyLsNbn/gyJ6IUAEAMip/Avg9rM4CHRXvUAgdQFx8Ucp0HAwNjd764GWAGaEDANS73efRtEfRTgpN+5y2nsDDzcMQKcB4UW8LUI6svwdPObI9qjhygIZdV7pAvo6qvwc5FvZC935EfwKAUrQCcb60DKfL5R2xeogjzrj5vzUciqrXcGDm7is34vQQKwCAUxzeD0RpYqBmJH0wbv3YAca3vDr8a6B1axIf+mIHAKjv6jnG+K20JaSr3pn/TRK1EwkgJ/FEYT0KBd4W93wSIzj+Z9b70Z/L/gy8aKD90tBWMN23WiORJ3AXvtZbCb6M8tGyNcmaiQZo3NnTgehvH87QJxp25hPdCCYaAMArp1uY/BbjDir5rXjiAea+/1cf8PEDCyIfNriFxA9DiQcASI+k9wD3HwsHa0eqcxytSoCZ+y4NCfcO5qJxZ+wtVOVCoCoBADI3Z3wJXAAuZAYeP1KtOv8BGmeFzQ+xOBcAAAAASUVORK5CYII=") center
+    background-size: cover
+
+@media (max-width: 959px)
+  .board.v-card
+    .v-card__title
+      font-size: 1.25rem

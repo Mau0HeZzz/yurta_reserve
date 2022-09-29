@@ -1,0 +1,65 @@
+query GetOverhaulChargesDashboard($periodStart: String!, $periodEnd: String!, $addrObjGar: Int!) {
+  getOverhaulChargesDashboard(periodStart: $periodStart, periodEnd: $periodEnd, addrObjGar: $addrObjGar) {
+    addrObjGar
+    periodStart
+    periodEnd
+    totalCharges
+    totalPaid
+    paidChargesProportion
+    chargesOnYears {
+      year
+      totalCharged
+      totalPaid
+      paidProportion
+    }
+    chargesOnMonths {
+      monthDate
+      monthString
+      charged
+      paid
+      paidProportion
+    }
+    chargesByPayerType {
+      payerType {
+        # id
+        title
+      }
+      charged
+      paid
+      paidProportion
+    }
+    feePerSquareMeterOnYears {
+      year
+      feeForSixMore
+      feeForSixLess
+    }
+    feePerSquareMeterOnRegions {
+      feeForSixLess
+      feeForSixMore
+      averageFee
+      addrObj {
+        objectId
+        name
+        typeName
+        fullName
+      }
+    }
+    feeOnNonTypycialRegions {
+      regionName
+      averageFee
+      feeForSixMore
+      feeForSixLess
+    }
+    chargesOnInnerObjects {
+      addrObj {
+        objectId
+        name
+        typeName
+        fullName
+      }
+      totalCharges
+      totalPaid
+      paidChargesProportion
+    }
+  }
+}

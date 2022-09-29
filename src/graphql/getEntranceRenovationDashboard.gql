@@ -1,0 +1,29 @@
+query GetEntranceRenovationDashboard($periodStart: String!, $addrObjGar: Int!, $periodEnd: String!) {
+  getEntranceRenovationDashboard(periodStart: $periodStart, addrObjGar: $addrObjGar, periodEnd: $periodEnd) {
+    addrObjGar
+    periodStart
+    periodEnd
+    totalEntrances
+    totalHouses
+    totalRamps
+    TotalCost
+    entranceRenovationOnYears {
+      year
+      totalMunicipalitets
+      totalHouses
+      totalEntrances
+      totalRamps
+      cost
+    }
+    entranceRenovationOnInnerObjects {
+      addrObj {
+        objectId
+        name
+        typeName
+        fullName
+      }
+      totalHouses
+      totalEntrances
+    }
+  }
+}
